@@ -1,0 +1,23 @@
+import random
+
+def choose_random_letter(word):
+    random_letter = random.choice(word)
+    return random_letter
+
+def find_word_with_letter(word_list, letter):
+    for word in word_list:
+        if letter in word:
+            return word
+
+words = ["apple", "banana", "cherry", "date", "elderberry"]
+random_word = random.choice(words)
+
+print(f"Выбранное слово: {random_word}")
+random_letter = choose_random_letter(random_word)
+print(f"Выбранная случайная буква: {random_letter}")
+found_word = find_word_with_letter(words, random_letter)
+
+if found_word:
+    print(f"Слово с выбранной буквой '{random_letter}': {found_word}")
+else:
+    print("Нет слова с выбранной буквой.")
